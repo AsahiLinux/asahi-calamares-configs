@@ -9,7 +9,7 @@ After=systemd-user-sessions.service getty@tty1.service plymouth-quit.service sys
 Type=oneshot
 RemainAfterExit=yes
 TimeoutStartSec=3600
-ExecStart=/usr/bin/startx /home/marcan/asahi/git/asahi-calamares-configs/bin/first-time-setup.sh
+ExecStart=/usr/bin/startx /usr/bin/first-time-setup.sh
 
 [Install]
 WantedBy=multi-user.target
