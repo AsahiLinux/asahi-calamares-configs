@@ -140,4 +140,4 @@ esac
 
 export DEFAULT_XKBMODEL DEFAULT_XKBLAYOUT DEFAULT_XKBVARIANT
 
-calamares && systemctl disable calamares.service
+calamares && systemctl disable calamares.service && usermod -p '*' root
