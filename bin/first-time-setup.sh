@@ -15,6 +15,15 @@ EnableHiDPI=true
 [X11]
 EnableHiDPI=true
 EOF
+    grep -q KScreen /etc/xdg/kdeglobals || cat >>/etc/xdg/kdeglobals <<EOF
+[KScreen]
+ScaleFactor=1.5
+ScreenScaleFactors=None-1=1.5;
+EOF
+    cat >/etc/xdg/kcmfonts <<EOF
+[General]
+forceFontDPI=144
+EOF
 fi
 
 sleep 0.2
