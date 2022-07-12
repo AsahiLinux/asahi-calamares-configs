@@ -84,10 +84,13 @@ sleep 0.2
 feh --zoom fill -N -F /usr/share/wallpapers/Next/contents/images/5120x2880.jpg &
 
 country="00"
-country_file=$(find /sys/devices/platform -name country -path '*05AC:*.0001/*' | head -n 1)
-if [ ! -z "$country_file" ]; then
-    country=$(cat "$country_file")
-fi
+for country_file in $(find /sys/devices/platform -name country -path '*05AC:*'); do
+    [ -z "$country_file" ] && continue
+    cc=$(cat "$country_file")
+    if [ "$cc" != "00" ]; then
+        country="$cc"
+    fi
+done
 
 case "$country" in
     0d)
