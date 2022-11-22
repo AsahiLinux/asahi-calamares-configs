@@ -81,7 +81,7 @@ kwin_x11 &
 
 sleep 0.2
 
-feh --zoom fill -N -F /usr/share/wallpapers/Next/contents/images/5120x2880.jpg &
+feh --zoom fill -N -F $(ls /usr/share/wallpapers/Next/contents/images/5120x2880* | head -n 1) &
 
 country="00"
 for country_file in $(find /sys/devices/platform -name country -path '*05AC:*'); do
